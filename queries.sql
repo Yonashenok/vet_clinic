@@ -82,3 +82,4 @@ WHERE owners.full_name = 'Dean Winchester' AND escape_attempts = 0;
 SELECT owners.full_name,count(owner_id) FROM animals  
 JOIN owners ON owners.id = animals.owner_id 
 GROUP BY owners.full_name ORDER BY count DESC LIMIT 1; 
+
