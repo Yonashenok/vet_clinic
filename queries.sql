@@ -54,5 +54,5 @@ SELECT neutered, avg(escape_attempts) FROM animals
 SELECT min(weight_kg), max(weight_kg) FROM animals 
 
 SELECT species, avg(escape_attempts) FROM animals 
-    WHERE data_of_birth > '1990-01-01' AND data_of_birth < '2000-12-31' 
+    WHERE data_of_birth >= '1990-01-01' AND data_of_birth <= '2000-12-31' 
     GROUP by species
