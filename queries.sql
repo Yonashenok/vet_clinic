@@ -1,39 +1,4 @@
 /*Queries that provide answers to the questions from all projects.*/
-BEGIN;
-DELETE FROM animals;
-ROLLBACK;
-SELECT * FROM animals;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 SELECT * FROM animals WHERE name LIKE '%mon%'
 SELECT name FROM animals WHERE data_of_birth > '2016-01-01' AND data_of_birth < '2019-01-01'
@@ -57,7 +22,7 @@ UPDATE animals
     WHERE name LIKE '%mon%';
 UPDATE animals
     SET species = 'pokemon'
-   WHERE name NOT LIKE '%mon%';
+   WHERE  species IS NULL;
 SELECT * FROM animals;
 COMMIT;
 SELECT * FROM animals;
@@ -89,5 +54,5 @@ SELECT neutered, avg(escape_attempts) FROM animals
 SELECT min(weight_kg), max(weight_kg) FROM animals 
 
 SELECT species, avg(escape_attempts) FROM animals 
-    WHERE data_of_birth > '1990-01-01' AND data_of_birth < '2000-01-01' 
+    WHERE data_of_birth > '1990-01-01' AND data_of_birth < '2000-12-31' 
     GROUP by species
