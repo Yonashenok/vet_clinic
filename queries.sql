@@ -1,4 +1,39 @@
 /*Queries that provide answers to the questions from all projects.*/
+BEGIN;
+DELETE FROM animals;
+ROLLBACK;
+SELECT * FROM animals;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 SELECT * FROM animals WHERE name LIKE '%mon%'
 SELECT name FROM animals WHERE data_of_birth > '2016-01-01' AND data_of_birth < '2019-01-01'
@@ -47,9 +82,9 @@ SELECT count(*) FROM animals WHERE escape_attempts = 0
 
 SELECT avg(weight_kg) FROM animals 
 
-SELECT name, max(weight_kg) FROM animals 
-    GROUP BY name 
-    ORDER BY max DESC LIMIT 1;
+SELECT neutered, avg(escape_attempts) FROM animals 
+    GROUP BY neutered 
+    ORDER BY avg DESC LIMIT 1;
 
 SELECT min(weight_kg), max(weight_kg) FROM animals 
 
