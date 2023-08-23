@@ -32,3 +32,22 @@ CREATE TABLE species (
     name varchar(100)   
 );
 
+CREATE TABLE vets (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50),
+    age int,
+    date_of_graduation date
+);
+
+CREATE TABLE specializations (
+    vet_id INTEGER REFERENCES vets(id),
+    species_id INTEGER REFERENCES species(id),
+    PRIMARY KEY (vet_id, species_id)
+)
+
+CREATE TABLE  visits (
+    id SERIAL PRIMARY KEY,
+    animal_id INT REFERENCES animals(id),
+    vet_id INT REFERENCES vets(id),
+    date_of_visit date
+)
